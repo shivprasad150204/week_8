@@ -1,0 +1,29 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+
+    TextInput:
+        id: input_miles
+        hint_text: "Enter miles"
+        input_filter: 'float'
+        on_text: app.handle_convert()
+
+    Label:
+        text: "Kilometres:"
+        font_size: 24
+
+    Label:
+        text: app.output_km
+        font_size: 32
+        color: 1, 1, 0, 1  # Yellow text
+
+    BoxLayout:
+        size_hint_y: None
+        height: '48dp'
+        Button:
+            text: "Up"
+            on_press: app.handle_increment(1)
+        Button:
+            text: "Down"
+            on_press: app.handle_increment(-1)
